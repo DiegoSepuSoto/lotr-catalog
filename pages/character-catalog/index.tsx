@@ -29,25 +29,11 @@ function Index() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-row flex-wrap justify-center">
+      <div className="flex flex-row flex-wrap justify-center mx-32">
         {charactersInfo !== null &&
           charactersInfo.map((characterInfo, index) => {
             return <CharacterCard key={index} characterInfo={characterInfo} />
           })}
-        {/*<CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />*/}
       </div>
     </div>
   )

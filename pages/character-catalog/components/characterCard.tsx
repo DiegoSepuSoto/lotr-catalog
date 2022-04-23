@@ -27,18 +27,18 @@ const BottomCardBody = styled.div`
 
 function CharacterCard({ characterInfo }: characterCardProps) {
   return (
-    <div className="m-7 w-44">
-      <div>
-        <div className="h-56 w-44 relative">
+    <div className="m-7">
+      <div className="rounded border-2 border-white">
+        <div className="h-60 w-42 relative -z-10">
           <Image
             src={characterInfo.image}
-            className="rounded-t -z-10"
             alt={characterInfo.title}
             layout="fill"
-            objectFit="scale-down"
+            objectFit="cover"
+            objectPosition="top"
           />
         </div>
-        <BottomCard className="text-white rounded-b p-3 border-2 border-white">
+        <BottomCard className="text-white p-3">
           <BottomCardTitle>{characterInfo.title}</BottomCardTitle>
           <BottomCardBody>Movie: {characterInfo.category}</BottomCardBody>
         </BottomCard>
