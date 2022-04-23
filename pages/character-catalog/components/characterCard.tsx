@@ -28,7 +28,7 @@ const BottomCardBody = styled.div`
 function CharacterCard({ characterInfo }: characterCardProps) {
   return (
     <div className="m-7">
-      <div className="rounded border-2 border-white">
+      <div className="rounded-lg border-4 border-white">
         <div className="h-60 w-42 relative -z-10">
           <Image
             src={characterInfo.image}

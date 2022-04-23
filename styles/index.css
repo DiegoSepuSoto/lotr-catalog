@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 body {
-    background-color: #000000;
+    background-image: url('/lotr-background.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(2px);
 }
