@@ -26,8 +26,12 @@ const BottomCardBody = styled.div`
 `
 
 function CharacterCard({ characterInfo }: characterCardProps) {
+  const onCharacterClick = () => {
+    window.open(characterInfo.link, '_blank')
+  }
+
   return (
-    <div className="m-7">
+    <div className="m-7 hover:cursor-pointer" onClick={onCharacterClick}>
       <div className="rounded-lg border-4 border-white">
         <div className="h-60 w-42 relative -z-10">
           <Image
