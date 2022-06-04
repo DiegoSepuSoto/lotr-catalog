@@ -1,19 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from './components/navbar'
 import CharacterCard from './components/characterCard'
-import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import { getCharacters } from '../../redux/character/getCharacters'
+import { useCharacter } from './hooks/useCharacter'
 
 function Index() {
-  const charactersInfo = useAppSelector(
-    (state) => state.character.charactersInfo
-  )
-  const charactersInfoStatus = useAppSelector((state) => state.character.status)
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(getCharacters())
-  }, [dispatch])
+  const { charactersInfo, charactersInfoStatus } = useCharacter()
 
   return (
     <div>
