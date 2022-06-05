@@ -1,15 +1,8 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { fireEvent, render } from '@testing-library/react'
-import CharacterCard, { CharacterInfo } from './characterCard'
-
-const characterInfo: CharacterInfo = {
-  link: 'https://lotr.fandom.com/wiki/Azog',
-  title: 'Azog',
-  image:
-    'https://static.wikia.nocookie.net/lotr/images/1/1c/Defiler.jpg/revision/latest/scale-to-width-down/341?cb=20220110192356',
-  category: 'The Hobbit',
-}
+import CharacterCard from './characterCard'
+import { characterInfo } from '../index.test'
 
 describe('<CharacterCard />', () => {
   test('renders character card with the right information', () => {

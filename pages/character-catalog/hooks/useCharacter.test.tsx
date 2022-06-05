@@ -1,38 +1,17 @@
-import * as reduxHooks from '../../../redux/hooks'
 import { renderHook } from '@testing-library/react'
 import { useCharacter } from './useCharacter'
-import { Provider } from 'react-redux'
-import { Store } from 'redux'
 import { createStore } from '../../../redux/store'
 import { ReactNode } from 'react'
-import { Character } from '../../../models/Character'
-
-const mockCharacterInfoLoadingState: Character[] = []
-const mockCharacterInfoStatusLoadingState = 'pending'
-
-const mockCharacterInfoFulfillState: Character[] = [
-  {
-    link: 'https://lotr.fandom.com/wiki/Azog',
-    title: 'Azog',
-    image:
-      'https://static.wikia.nocookie.net/lotr/images/1/1c/Defiler.jpg/revision/latest/scale-to-width-down/341?cb=20220110192356',
-    category: 'The Hobbit',
-  },
-]
-const mockCharacterInfoStatusFulfillState = 'fulfill'
-
-const mockCharacterInfoRejectedState: Character[] = []
-const mockCharacterInfoStatusRejectedState = 'rejected'
-
-const ReduxProvider = ({
-  children,
-  reduxStore,
-}: {
-  children: ReactNode
-  reduxStore: Store
-}) => <Provider store={reduxStore}>{children}</Provider>
-
-const useAppSelectorMock = jest.spyOn(reduxHooks, 'useAppSelector')
+import {
+  mockCharacterInfoFulfillState,
+  mockCharacterInfoLoadingState,
+  mockCharacterInfoRejectedState,
+  mockCharacterInfoStatusFulfillState,
+  mockCharacterInfoStatusLoadingState,
+  mockCharacterInfoStatusRejectedState,
+  ReduxProvider,
+  useAppSelectorMock,
+} from '../index.test'
 
 describe('useCharacter hook', () => {
   beforeEach(() => {
